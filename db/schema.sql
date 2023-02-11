@@ -3,7 +3,7 @@ DROP DATABASE IF EXISTS db_portproject;
 CREATE DATABASE db_portproject; 
 
 -- \c  db_portproject
-
+-- schema
 
 CREATE TABLE strains (
   id SERIAL PRIMARY KEY,
