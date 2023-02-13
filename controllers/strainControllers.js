@@ -1,5 +1,5 @@
 const express = require("express");
-const confirmStrains = require("../confirmStrains");
+const confirmStrains = require("../confirmStrain")
 const strains = express.Router();
 
 const {
