@@ -1,6 +1,7 @@
 //Imports
 const express = require("express")
 const cors = require("cors")
+const strainController = require("./controllers/strainControllers")
 
 // Configuration 
 const app = express();
@@ -8,25 +9,27 @@ const app = express();
 //Middleware 
 app.use(express.json());
 app.use(cors());
-// app.use()
+app.use("/strains", strainController)
 
 
-//strains Routes
-const strainsController = require("./controllers/strainsControllers.js"); 
-app.use ("/strains", strainsController); 
-
-
-
-//Routes
-app.get('/', (req, res) => {
-    res.send("Welcome to the Cannatech App")
-})
-
-//404 page 
-app.get("*", (req, res) => {
+app.get("/", (req, res) => {
+    res.send("Welcome to the CannaTech App")
+  })
+  
+  // 404 page
+  app.get("*", (req, res) => {
     res.status(404).send("Page not found")
-})
+  })
+  
+  //test
 
-//test
+  module.exports = app
 
-module.exports = app; 
+
+
+
+
+
+
+
+
