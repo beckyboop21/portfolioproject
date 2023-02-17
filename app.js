@@ -1,10 +1,11 @@
 //Imports
 const express = require("express")
+const app = express();
 const cors = require("cors")
-const strainController = require("./controllers/strainControllers")
+const strainController = require("./controllers/strainController")
 
 // Configuration 
-const app = express();
+
 
 //Middleware 
 app.use(express.json());

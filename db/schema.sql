@@ -13,7 +13,6 @@ CREATE TABLE strains (
   name text NOT NULL,
   type text NOT NULL,
   mood integer NOT NULL,
-  is_avibe integer NOT NULL,
-  image boolean NOT NULL,
-  image_url text NOT NULL
+  is_avibe BOOLEAN,
+  image text NOT NULL
 );

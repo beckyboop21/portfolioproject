@@ -2,10 +2,13 @@ const db = require("../db/dbConfig.js");
 
 // ROUTES
 
-//All - (app) routes
+// All - (app) routes 
 const getAllStrains = async () => {
+    console.log("queries")
 try {
+    
 const allStrains = await db.any("SELECT * FROM strains");
+console.log("allStrains", allStrains)
 return allStrains;
 } catch (error) {
 return error;
@@ -26,8 +29,8 @@ return error;
 const createStrain = async (strain) => {
 try {
 const createdOneStrain = await db.one(
-"INSERT INTO strains (name, type, mood, image, is_avibe) VALUES($1, $2, $3, $4, $5) RETURNING *",
-[strain.name, strain.type, strain.mood, strain.image, strain.is_avibe]
+"INSERT INTO strains (name, type, mood, is_avibe, image) VALUES($1, $2, $3, $4, $5) RETURNING *",
+[strain.name, strain.type, strain.mood, strain.is_avibe, strain.image]
 );
 return createdOneStrain;
 } catch (error) {
